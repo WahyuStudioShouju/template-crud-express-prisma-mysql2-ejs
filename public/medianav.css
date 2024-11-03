@@ -1,0 +1,42 @@
+:root{
+    --warna-dasar: #8be896;
+    --navbar:#181b28;
+}
+
+@media (max-width: 600px){
+    .navbar-extra{
+        display: inline-block;
+      }
+    .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: var(--navbar);
+        width: 100%;
+        height: 100vh;
+        transition: 0.3s;
+      }
+    
+      .navbar-nav.active{
+        right: 0;
+      }
+    
+      .navbar-nav a{
+        color: white;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 5px;
+      }
+
+      .navbar-nav ul{
+        margin-right:7%;
+        margin-left: 3%;
+      }
+
+      .navbar-nav a:hover{
+        border-bottom: 1px solid white;
+        color: white;
+      }
+}

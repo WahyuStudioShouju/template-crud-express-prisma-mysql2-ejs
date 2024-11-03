@@ -1,0 +1,24 @@
+{
+  "name": "template-express-prisma-mysql2-ejs",
+  "version": "1.0.0",
+  "description": "template node js chtgpt",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon app.js"
+  },
+  "author": "Wahyu Studio Shouju",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "^5.21.1",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "nodemon": "^3.1.7",
+    "prisma": "^5.21.1"
+  }
+}

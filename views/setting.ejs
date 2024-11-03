@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/table.css" />
+    <style>
+      * {
+        font-family: sans-serif;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        box-sizing: border-box;
+        background-color: rgb(226, 236, 238);
+      }
+
+      .sidebar {
+        position: fixed;
+        background: rgb(255, 255, 255);
+        width: 150px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        cursor: pointer;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+      }
+
+      .ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        padding: 2rem;
+      }
+
+      .ul a {
+        color: black;
+        text-decoration: none;
+        margin-top: 1rem;
+      }
+
+      .ul a:hover {
+        color: rgb(0, 140, 255);
+        margin-left: 20px;
+        transition: 0.4s;
+        border-bottom: 1.5px solid;
+      }
+
+      .ul a.active-row {
+        color: rgb(0, 140, 255);
+        border-bottom: 1.5px solid;
+      }
+
+      .nameku {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        margin-bottom: 4rem;
+      }
+
+      .main {
+        margin-left: 150px;
+      }
+
+      .nav-1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+      }
+
+      .nav-2 {
+        display: flex;
+        padding: 2rem;
+        padding-bottom: 4rem;
+        padding-top: 1rem;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .das {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+      }
+
+      .pdas {
+        color: white;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+      }
+
+      .pic {
+        width: 2rem;
+        border-radius: 50%;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+      }
+
+      .create-report {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+        color: black;
+        font-weight: 600;
+      }
+
+      .content-1 {
+        background-color: white;
+        width: 25rem;
+        height: auto;
+        padding: 2rem;
+        margin: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        margin-top: -2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2 class="nameku">Navbar</h2>
+      <div class="ul">
+        <a href="" class="active-row">Dasboard</a>
+        <a href="">Products</a>
+        <a href="./categories.html">Categories</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+      </div>
+    </div>
+    <div class="main">
+      <nav
+        class="nav-1"
+        style="padding: 0.5rem; padding-left: 2rem; padding-right: 2rem"
+      >
+        <div>
+          <input type="text" style="border-radius: 10px; border: 1.5px solid
+          rgb(0, 140, 255); width: 12rem; padding: 0.3rem; outline-color: rgb(0,
+          140, 255);"" placeholder="Search here...">
+        </div>
+        <div>
+          <img class="pic" src="/static/img/pic.jpg" alt="pic my profil" />
+        </div>
+      </nav>
+      <div class="nav-2" style="background-color: rgb(0, 140, 255)">
+        <div>
+          <a href="/dasboard" class="das">Dasboard</a>
+          <p class="pdas">yuugoo > Dasboard</p>
+        </div>
+        <div>
+          <a href="" class="create-report">Create Report</a>
+        </div>
+      </div>
+
+      <div class="content-1">
+        <p style="font-size: 1.5rem; font-weight: 500">Name Table</p>
+        <table class="container-table">
+          <thead class="thead">
+            <tr class="thtr">
+              <th>No</th>
+              <th>Category</th>
+              <th>Umur</th>
+            </tr>
+          </thead>
+          <tbody class="tbody">
+            <% category_users.forEach((ctgy, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= ctgy.name %></td>
+              <td><%= ctgy.umur %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+      <div class="content-2">
+        <h1>Penjualan</h1>
+        <p>Rp 3.000.000</p>
+      </div>
+    </div>
+  </body>
+</html>
